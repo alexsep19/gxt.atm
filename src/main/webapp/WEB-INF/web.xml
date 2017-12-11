@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <listener>
+    <listener-class>gxt.server.servlet.SessionCounter</listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>requestFactoryServlet</servlet-name>
+    <servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>jaspServlet</servlet-name>
+    <servlet-class>gxt.server.servlet.jasperin</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>upfileServlet</servlet-name>
+	<servlet-class>gxt.server.servlet.srvlUpFile</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>upfileServletBanks</servlet-name>
+	<servlet-class>gxt.server.servlet.srvlUpFileBanks</servlet-class>
+  </servlet>
+  
+<!--  <servlet>
+     <servlet-name>restXml</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+		<param-name>com.sun.jersey.config.property.packages</param-name>
+		<param-value>ws</param-value>
+	</init-param>
+  </servlet>
+ -->
+
+
+  <servlet-mapping>
+    <servlet-name>requestFactoryServlet</servlet-name>
+    <url-pattern>/gwtRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>jaspServlet</servlet-name>
+    <url-pattern>/startPoint/jasperin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>upfileServlet</servlet-name>
+	<url-pattern>/startPoint/srvlUpFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>upfileServletBanks</servlet-name>
+	<url-pattern>/startPoint/srvlUpFileBanks</url-pattern>
+  </servlet-mapping>
+  
+<!--  <servlet-mapping>
+     <servlet-name>restXml</servlet-name>
+    <url-pattern>/startPoint/*</url-pattern>
+  </servlet-mapping>
+   -->
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>startPoint.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
